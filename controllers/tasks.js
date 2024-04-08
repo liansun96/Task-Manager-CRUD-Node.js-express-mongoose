@@ -9,10 +9,10 @@ const getAllTasks = asyncWrapper(async (req, res) => {
   // res.status(200).json({ status : "success" , data : {tasks , nbHits : tasks.length}});
 });
 
-const createTask = asyncWrapper(async (req, res) => {
+const createTask = asyncWrapper(async (req, res ) => {
   const task = await Task.create(req.body);
   res.status(201).json({ task });
-});
+}); 
 
 const getSingleTask = asyncWrapper(async (req, res, next) => {
   const { id: taskID } = req.params;
